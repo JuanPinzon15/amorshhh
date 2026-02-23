@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perdoname mi Vida entera ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow: hidden;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    color: #ff2e63;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+#yes {
+    background-color: #ff2e63;
+    color: white;
+}
+
+#no {
+    background-color: gray;
+    color: white;
+    position: absolute;
+}
+
+.gallery img {
+    width: 120px;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+
+.heart {
+    position: fixed;
+    top: -10px;
+    color: orange;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Perdon mi perrito ❤️</h1>
+    <p>Actue como un bobito amor y lo siento mucho, jamas volverá suceder</p>
+    <p>Mis días estando asi son demasiado tristesss :( </p>
+
+    <h2>💞 Desde que estamos juntos:</h2>
+    <p id="contador"></p>
+
+    <h2>📸 Nuestros momentos</h2>
+    <div class="gallery">
+     
+        <img src="amorfoto.jpeg">
+        <img src="amorfotoo.jpeg">
+        <img src="amorfotooo.jpeg">
+    </div>
+
+    <h2>¿Me perdonas?</h2>
+    <button id="yes" onclick="alert('Sabía que sí 🥰🥰🥰 Te amo mi amorrr.')">Sí</button>
+    <button id="no">No</button>
+
+    <h2>Mini jueguito 😌</h2>
+    <p>¿Qué debería hacer?</p>
+    <button onclick="alert('Tu mandas as always 😋 Acaí con fresa y coco')">Comprarte un acaí</button>
+    <button onclick="alert('Eso va mi patrona 🫡 Pa ayer es tarde')">Churrasco weyyy</button>
+</div>
+
+<script>
+
+const fechaInicio = new Date("2025-09-15"); 
+const hoy = new Date();
+const diferencia = hoy - fechaInicio;
+const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+document.getElementById("contador").innerText = dias + " días juntos y contando 💕";
+
+
+const noBtn = document.getElementById("no");
+noBtn.addEventListener("mouseover", () => {
+    noBtn.style.top = Math.random() * window.innerHeight + "px";
+    noBtn.style.left = Math.random() * window.innerWidth + "px";
+});
+
+
+function crearCorazon() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "🧡";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.fontSize = Math.random() * 20 + 10 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(crearCorazon, 300);
+</script>
+
+</body>
+</html>
