@@ -96,10 +96,16 @@ button {
 
 <script>
 
-const fechaInicio = new Date("2025-09-15"); 
+function diasEntre(fecha1, fecha2) {
+    const f1 = new Date(fecha1.getFullYear(), fecha1.getMonth(), fecha1.getDate());
+    const f2 = new Date(fecha2.getFullYear(), fecha2.getMonth(), fecha2.getDate());
+    const diff = f2 - f1; 
+    return Math.floor(diff / (1000 * 60 * 60 * 24));
+}
+
+const fechaInicio = new Date("2025-09-15");
 const hoy = new Date();
-const diferencia = hoy - fechaInicio;
-const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+const dias = diasEntre(fechaInicio, hoy);
 document.getElementById("contador").innerText = dias + " días juntos y contando 💕";
 
 
